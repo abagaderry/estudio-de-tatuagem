@@ -4,8 +4,8 @@
  */
 package com.mycompany.estudiodetatuagem;
 
-import com.mycompany.estudiodetatuagem.model.Clientes;
-import com.mycompany.estudiodetatuagem.DAO.ClientesDAO;
+import com.mycompany.estudiodetatuagem.model.Tatuadores;
+import com.mycompany.estudiodetatuagem.DAO.TatuadoresDAO;
 import java.sql.SQLException;
 import java.util.Collection;
 
@@ -15,22 +15,23 @@ import java.util.Collection;
  */
 public class Teste {
     public static void main(String[] args) throws SQLException {
-        ClientesDAO dao = new ClientesDAO();
-
-        Clientes novo = new Clientes("Maria Silva", "12345678900", "1995-04-12", "11999998888", "maria@email.com");
+        TatuadoresDAO dao = new TatuadoresDAO();
+        
+        Tatuadores novo = new Tatuadores("João", "Realismo", 30, "11999999");
         dao.insere(novo);
-        System.out.println("Cliente inserido!");
-
-        Collection<Clientes> clientes = dao.listar("");
-        Clientes ultimo = null;
-        for (Clientes c : clientes) {
-            System.out.println(c.getId() + " - " + c.getNome() + " - " + c.getCpf());
-            ultimo = c;
+        System.out.println("Novo tatuador adicionado");
+        
+        Collection<Tatuadores> tatuadores = dao.listar("");
+        Tatuadores ultimo = null;
+        for (Tatuadores t : tatuadores) {
+            System.out.println(t.getId() + " - " + t.getNome() + " - " + t.getEspecialidade()
+                    + " - " + t.getComissao() + "% - ativo: " + t.isAtivo());
+            ultimo = t;
         }
-
+        
         if (ultimo != null) {
             boolean removido = dao.remove(ultimo);
-            System.out.println("Removido " + removido);
+            System.out.println("Removido? " + removido);
         }
     }
 }
