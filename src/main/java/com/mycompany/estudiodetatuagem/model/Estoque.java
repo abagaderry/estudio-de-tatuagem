@@ -9,37 +9,59 @@ package com.mycompany.estudiodetatuagem.model;
  * @author bruno
  */
 public class Estoque {
-    private int tinta, agulhas, luvas;
+    private int id, quantidade, quantidadeMinima;
+    private String nome, categoria;
 
-    public Estoque(int tinta, int agulhas, int luvas) {
-        this.tinta = tinta;
-        this.agulhas = agulhas;
-        this.luvas = luvas;
+    public Estoque() {
     }
 
-    public int getTinta() {
-        return tinta;
+    public Estoque(String nome, String categoria, int quantidade, int quantidadeMinima) {
+        this.nome = nome;
+        this.categoria = categoria;
+        this.quantidade = quantidade;
+        this.quantidadeMinima = quantidadeMinima;
     }
 
-    public void setTinta(int tinta) {
-        this.tinta = tinta;
+    public int getId() {
+        return id;
     }
 
-    public int getAgulhas() {
-        return agulhas;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setAgulhas(int agulhas) {
-        this.agulhas = agulhas;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public int getLuvas() {
-        return luvas;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
-    public void setLuvas(int luvas) {
-        this.luvas = luvas;
+    public int getQuantidadeMinima() {
+        return quantidadeMinima;
     }
+
+    public void setQuantidadeMinima(int quantidadeMinima) {
+        this.quantidadeMinima = quantidadeMinima;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     
 
 }
