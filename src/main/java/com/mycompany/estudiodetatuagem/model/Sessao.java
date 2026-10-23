@@ -4,69 +4,94 @@
  */
 package com.mycompany.estudiodetatuagem.model;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author bruno
  */
 public class Sessao {
-    private String cliente, tatuador, design, data, duracao;
-    private float valor;
+    private int id, idCliente, idTatuador, duracaoMinutos;
+    private Integer idDesign; // opcional
+    private LocalDateTime dataHora;
+    private double valor;
+    private String status = "agendada";
 
-    public Sessao(String cliente, String tatuador, String design, String data, String duracao, float valor) {
-        this.cliente = cliente;
-        this.tatuador = tatuador;
-        this.design = design;
-        this.data = data;
-        this.duracao = duracao;
+    public Sessao() {
+    }
+
+    public Sessao(int idCliente, int idTatuador, Integer idDesign,
+                  LocalDateTime dataHora, int duracaoMinutos, double valor) {
+        this.idCliente = idCliente;
+        this.idTatuador = idTatuador;
+        this.idDesign = idDesign;
+        this.dataHora = dataHora;
+        this.duracaoMinutos = duracaoMinutos;
         this.valor = valor;
     }
 
-    public String getCliente() {
-        return cliente;
+    public int getId() {
+        return id;
     }
 
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getTatuador() {
-        return tatuador;
+    public int getIdCliente() {
+        return idCliente;
     }
 
-    public void setTatuador(String tatuador) {
-        this.tatuador = tatuador;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
-    public String getDesign() {
-        return design;
+    public int getIdTatuador() {
+        return idTatuador;
     }
 
-    public void setDesign(String design) {
-        this.design = design;
+    public void setIdTatuador(int idTatuador) {
+        this.idTatuador = idTatuador;
     }
 
-    public String getData() {
-        return data;
+    public int getDuracaoMinutos() {
+        return duracaoMinutos;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setDuracaoMinutos(int duracaoMinutos) {
+        this.duracaoMinutos = duracaoMinutos;
     }
 
-    public String getDuracao() {
-        return duracao;
+    public Integer getIdDesign() {
+        return idDesign;
     }
 
-    public void setDuracao(String duracao) {
-        this.duracao = duracao;
+    public void setIdDesign(Integer idDesign) {
+        this.idDesign = idDesign;
     }
 
-    public float getValor() {
+    public LocalDateTime getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
+    }
+
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(float valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
-    
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
 }
